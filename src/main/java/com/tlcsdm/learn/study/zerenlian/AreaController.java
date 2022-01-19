@@ -19,16 +19,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/superadmin")
 public class AreaController {
-
-    @Autowired
-    private HttpServletRequest request;
-    @Autowired
-    private HttpServletResponse response;
     @Autowired
     private ChainPatternDemo chainPatternDemo;
 
     @GetMapping(value = "/listarea")
-    public Map<String, Object> listArea() {
+    public Map<String, Object> listArea(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> modelMap = new HashMap<>();
         System.out.println("---" + chainPatternDemo.exec(request, response));
         return modelMap;
