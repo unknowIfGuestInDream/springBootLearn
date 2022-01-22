@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
+ * 责任链
+ *
  * @author: 唐 亮
  * @date: 2022/1/18 22:31
  * @since: 1.0

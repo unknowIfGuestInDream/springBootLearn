@@ -1,7 +1,8 @@
 package com.tlcsdm.learn.study.zerenlian;
 
 import com.tlcsdm.learn.study.zerenlian.filter.ChainPatternDemo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.tlcsdm.learn.study.zerenlian.handler.AbstractHandler;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,14 +19,16 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/superadmin")
+@AllArgsConstructor
 public class AreaController {
-    @Autowired
-    private ChainPatternDemo chainPatternDemo;
+    private final ChainPatternDemo chainPatternDemo;
+    private final Map<String, AbstractHandler> abstractHandlerMap;
 
     @GetMapping(value = "/listarea")
     public Map<String, Object> listArea(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> modelMap = new HashMap<>();
         System.out.println("---" + chainPatternDemo.exec(request, response));
+        System.out.println(abstractHandlerMap);
         return modelMap;
     }
 
