@@ -3,6 +3,7 @@ package com.tlcsdm.learn.util;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * 工具类SpringContextUtils，用来从spring容器里获取bean
@@ -11,6 +12,7 @@ import org.springframework.context.ApplicationContextAware;
  * @date: 2021/1/3 17:54
  * @since: 1.0
  */
+@Component
 public class SpringContextUtils implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
